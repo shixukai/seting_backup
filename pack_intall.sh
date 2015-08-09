@@ -2,8 +2,14 @@
 set -v on
 
 #安装Chrome
+cd ~
+if [ ! -f "google-chrome-stable_current_amd64.deb" ]; then
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
+else
+echo 安装包已存在,开始安装
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+fi
 
 #安装基础包
 sudo apt-get install autoconf automake bison build-essential curl exuberant-ctags git-core libreadline6 libreadline6-dev libreadline-dev libsqlite3-0 libsqlite3-dev libssl-dev libyaml-dev libc6-dev libncurses5-dev libtool libxml2-dev libxslt1-dev openssl sqlite3 subversion zlib1g zlib1g-dev software-properties-common imagemagick libmagickwand-dev libpcre3-dev libcurl4-openssl-dev wget htop iftop python-pycurl
