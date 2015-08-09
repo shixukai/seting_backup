@@ -12,6 +12,7 @@ sudo apt-get update
 sudo apt-get install git
 sudo apt-get install ack-grep
 sudo apt-get install zsh
+sudo apt-get install vim-syntastic
 
 #安装pathogen
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
