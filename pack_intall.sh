@@ -26,10 +26,7 @@ curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 #安装vundle
 cd ~/.vim/bundle
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-#安装oh-my-zsh
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-#设置oh-my-zsh为默认shell
-chsh -s /bin/zsh
+
 
 #airline字体安装及设置
 cd ~/.vim/bundle
@@ -49,4 +46,8 @@ fc-cache -vf ~/.fonts/
 git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 
+#安装oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+#设置oh-my-zsh为默认shell
+chsh -s /bin/zsh
 
