@@ -17,6 +17,8 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 set nu
+"设定搜索时不区分大小写
+set ignorecase
 colorscheme darkblue
 
 imap kk <ESC>
