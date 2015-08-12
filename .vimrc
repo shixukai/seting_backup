@@ -6,7 +6,9 @@ filetype indent on    " 启用文件类型缩进
 filetype plugin on    " 启用指定文件类型插
 set autoread " 设置当文件被改动时自动载入
 
-
+"Ctags相关设置
+set tags=tags
+set autochdir
 "设置自动触发滚动的行数
 set scrolloff=6 
 "设定搜索即定位
