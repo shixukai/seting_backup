@@ -21,7 +21,9 @@ set shiftwidth=2
 set nu
 "设定搜索时不区分大小写
 set ignorecase
-colorscheme darkblue
+colorscheme molokai
+let g:molokai_original = 1
+let g:rehash256 = 1
 
 imap kk <ESC>
 
@@ -29,7 +31,8 @@ imap kk <ESC>
 let g:ctrlp_map = '<c-p>'                  
 
 "vim-ruby execute 
-map <F4> :!ruby % <CR>
+map <F5> :!ruby % <CR>
+map <F4> :!rspec <CR>
 
 "autocmd vimenter * NERDTree 
 autocmd StdinReadPre * let s:std_in=1  
