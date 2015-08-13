@@ -119,6 +119,8 @@ Bundle 'slim-template/vim-slim.git'
 
 Bundle 'vim-ruby/vim-ruby'
 
+"scrooloose/nerdcommenter快速注释插件
+Plugin 'https://github.com/scrooloose/nerdcommenter.git'
 
 "#########################################################
 "#########################################################
