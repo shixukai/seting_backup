@@ -32,14 +32,36 @@ let g:ctrlp_map = '<c-p>'
 map <F5> :!ruby % <CR>
 map <F4> :!rspec <CR>
 
+
+"****************************************************************
+"Track the engine.
+"Plugin 'SirVer/ultisnips'
+
+" Snippets are separated from the engine. Add this if you want them:
+"Plugin 'honza/vim-snippets'
+
+" Trigger configuration. Do not use <tab> if you use
+"https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+"****************************************************************
+
+
+
+
+"****************************************************************
 "autocmd vimenter * NERDTree 
 autocmd StdinReadPre * let s:std_in=1  
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif 
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif "close vim if the only window left open is a NERDTree
-
+"close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif 
 "nerdTee窗口宽度
 let NERDTreeWinSize = 20
-
+"****************************************************************
 
 "设置Tagbar启动快捷键
 nmap <F8> :TagbarToggle<CR>
@@ -48,13 +70,19 @@ nmap <F8> :TagbarToggle<CR>
 "and bottom. If nothing specified, the default value is left
 let g:ctrlsf_position = 'bottom'
 
+
+"****************************************************************
 "设置打开CtrlSF的快捷键为ctrl+f
 nmap     <C-f> <Plug>CtrlSFPrompt
 "ss......................适用于normal模式，搜索当前光标所在的单词
 nmap ss :CtrlSF <C-R><C-W><CR>
 "ss......................适用于visual模式，搜索当前选中的文字
 vnoremap ss y:CtrlSF <C-R>"<CR>
+"****************************************************************
 
+
+
+"****************************************************************
 " airline设置
 set laststatus=2
 " 使用powerline打过补丁的字体
@@ -72,6 +100,9 @@ nnoremap [b :bp<CR>
 nnoremap ]b :bn<CR>
 "让airline显示颜色
 set t_Co=256
+"****************************************************************
+
+
 
 "##############################################################
 "以下是vundle配置
@@ -108,7 +139,7 @@ Plugin 'https://github.com/kien/ctrlp.vim.git'
 "vim-snippets
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
+Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 "NERD Tree
 Plugin 'https://github.com/scrooloose/nerdtree.git'
@@ -138,6 +169,6 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-
+"##############################################################
 
 execute pathogen#infect()
