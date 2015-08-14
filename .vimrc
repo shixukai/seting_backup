@@ -31,7 +31,7 @@ let g:ctrlp_map = '<c-p>'
 "vim-ruby execute 
 map <F5> :!ruby % <CR>
 map <F4> :!rspec <CR>
-
+vmap <c-c> "+y
 
 "****************************************************************
 "Track the engine.
