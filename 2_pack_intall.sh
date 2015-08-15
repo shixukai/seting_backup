@@ -1,8 +1,6 @@
 #! /bin/bash
 set -v on
 
-#先更新源
-./change_source.sh
 
 sudo apt-get -f install
 sudo apt-get update

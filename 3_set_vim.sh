@@ -5,3 +5,6 @@ set -v on
 Cur_dir=$(pwd)
 ln -sf $Cur_dir/.vimrc ~/.vimrc
 ln -sf $Cur_dir/colors ~/.vim/colors
+
+#通过Vundle安装vim插件
+vim +PluginInstall +qall
