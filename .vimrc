@@ -15,6 +15,7 @@ set scrolloff=6
 set incsearch
 "设定默认可以使用退格键
 set backspace=indent,eol,start
+set mouse=a
 set expandtab
 set tabstop=2
 set shiftwidth=2
@@ -78,6 +79,10 @@ nmap     <C-f> <Plug>CtrlSFPrompt
 nmap ss :CtrlSF <C-R><C-W><CR>
 "ss......................适用于visual模式，搜索当前选中的文字
 vnoremap ss y:CtrlSF <C-R>"<CR>
+"设置默认搜索根目录为工程根目录
+let g:ctrlsf_default_root = 'project'
+"设置默认启用正则表达式
+let g:ctrlsf_regex_pattern = 1
 "****************************************************************
 
 
