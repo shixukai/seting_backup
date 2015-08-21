@@ -67,9 +67,6 @@ let NERDTreeWinSize = 20
 "设置Tagbar启动快捷键
 nmap <F8> :TagbarToggle<CR>
 
-"defines where CtrlSf places its window. Possible values are left, right, top
-"and bottom. If nothing specified, the default value is left
-let g:ctrlsf_position = 'bottom'
 
 
 "****************************************************************
@@ -83,8 +80,12 @@ vnoremap ss y:CtrlSF <C-R>"<CR>
 let g:ctrlsf_default_root = 'project'
 "设置默认启用正则表达式
 let g:ctrlsf_regex_pattern = 1
+"defines where CtrlSf places its window. Possible values are left, right, top "and bottom. If nothing specified, the default value is left
+let g:ctrlsf_position = 'bottom'
 "****************************************************************
-
+"vim-surround设置
+let g:surround_45 = "<% \r %>"
+let g:surround_61 = "<%= \r %>"
 
 
 "****************************************************************
@@ -154,9 +155,12 @@ Bundle 'slim-template/vim-slim.git'
 Plugin 'tpope/vim-rails'
 
 Bundle 'vim-ruby/vim-ruby'
-
+"tpope/vim-endwise
+Plugin 'https://github.com/tpope/vim-endwise.git'
 "scrooloose/nerdcommenter快速注释插件
 Plugin 'https://github.com/scrooloose/nerdcommenter.git'
+"tpope/vim-surround
+Plugin 'tpope/vim-surround'
 
 "#########################################################
 "#########################################################
