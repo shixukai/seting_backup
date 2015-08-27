@@ -5,6 +5,7 @@
   [[default]]
     use_system_font = False
     login_shell = True
+    scrollback_lines = 1000
     background_image = None
     foreground_color = "#ffffff"
     show_titlebar = False
