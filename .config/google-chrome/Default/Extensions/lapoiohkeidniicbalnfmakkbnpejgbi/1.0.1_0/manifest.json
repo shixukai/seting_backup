@@ -1,0 +1,20 @@
+{
+   "background": {
+      "scripts": [ "background.js" ]
+   },
+   "description": "适应Chrome新版机制，完成浏览器对于支付宝原来安全控件的支持。",
+   "externally_connectable": {
+      "matches": [ "*://*.taobao.com/*", "*://*.alibaba.com/*", "*://*.aliexpress.com/*", "*://*.etao.com/*", "*://*.tmall.com/*", "*://*.tmall.hk/*", "*://*.juhuasuan.com/*", "*://*.aliyun.com/*", "*://*.alipay.com/*", "*://*.1688.com/*", "*://*.alimama.com/*", "*://*.taobao.org/*", "*://*.alibaba-inc.com/*" ]
+   },
+   "icons": {
+      "128": "icon-128.png",
+      "16": "icon-16.png",
+      "48": "icon-48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAil/lH3WiD58E/W1TXHEA+sI4iQpTzg6Ly4vWcGq/WovIcufEGP8XmC79tYBX2kFN7JdkVj1xWcZXjyiowu5SRmwW6kBZkikkNuDTyDImsCD8OdfVc/l2Qx0xkdRwvgY21Aasie7pT6rCnZCKgEelif6PVRYgXtU5euYhKrmuxDf0uUHIM/HFcrezUDw3i1J/ePy7Ik9m3QRh1FhGVgoP0r0K1cxD39FGKqChfi+238Qk1gMgoQq/XMzLSSVba0B+fbhgc+ikRC7RH1EY57c5p+JlvIi/tfiy5qpKvn9odbX4vx+BwrJie2hz9wSkwdV2Ke/HAfdGa1/iy67dvrtYOwIDAQAB",
+   "manifest_version": 2,
+   "name": "支付宝安全插件",
+   "permissions": [ "nativeMessaging" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0.1"
+}

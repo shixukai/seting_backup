@@ -1,0 +1,1 @@
+define(["./storage"],function(a){"use strict";var b=chrome.browserAction,c={changeTo:function(a){return a?(b.setBadgeText({text:""}),b.setTitle({title:"划词翻译已开启"})):(b.setBadgeText({text:"off"}),b.setTitle({title:"划词翻译已关闭"})),this}};return a.get("enable").done(function(a){c.changeTo(a.enable)}),a.onChange(function(a){c.changeTo(a.enable)},{enable:null}),Object.freeze(c)});

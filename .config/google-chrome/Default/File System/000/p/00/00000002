@@ -1,0 +1,40 @@
+11:37:48 GMT+0800 (CST) (WARN) https://www.google.co.jp/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0CB0QFjAAahUKEwiC8Yig2rHHAhWDGZQKHRP_CQ8&url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F18986108%2Fundefined-authenticated-method-in-rails-4&ei=hqjSVYKWLoOz0AST_qd4&usg=AFQjCNEoT4_u8U-UjCqym_FzIaKjE5dKLw&sig2=4D3USAFYMM8OllnuM6PbmQ&bvm=bv.99804247,d.dGo: Couldn't initialize clearly custom detect
+    at Object.H [as isCustomFormat] (eval at finishLoadingScript (/content/require/require-config.js:2:113), <anonymous>:2:9079)
+    at Object.isSiteEligible (eval at finishLoadingScript (/content/require/require-config.js:2:113), <anonymous>:2:231)
+    at b (/content/tooltips/custom_tooltip_check.js:2:93)
+    at chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/content/tooltips/custom_tooltip_check.js:2:352
+    at Object.I.execCb (/third_party/require/require.js:6:12300)
+    at Object.B.check (/third_party/require/require.js:6:6850)
+    at Object.<anonymous> (/third_party/require/require.js:6:8952)
+    at chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/third_party/require/require.js:6:670
+    at chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/third_party/require/require.js:6:9310
+14:51:22 GMT+0800 (CST) (WARN) https://www.google.co.jp/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0CB0QFjAAahUKEwi5kNDChbLHAhVKmJQKHWa5Aw8&url=http%3A%2F%2Fwww.cslog.cn%2FContent%2Fruby_on_rails_sessions%2F&ei=5dXSVfmJOsqw0gTm8o54&usg=AFQjCNH8h47Mu4CFBLecNRaSmrlphc2t3g&sig2=XgrXviRFqXsy5fYwLZ0ZIg&bvm=bv.99804247,d.dGo: Couldn't initialize clearly custom detect
+    at Object.H [as isCustomFormat] (eval at finishLoadingScript (/content/require/require-config.js:2:113), <anonymous>:2:9079)
+    at Object.isSiteEligible (eval at finishLoadingScript (/content/require/require-config.js:2:113), <anonymous>:2:231)
+    at b (/content/tooltips/custom_tooltip_check.js:2:93)
+    at chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/content/tooltips/custom_tooltip_check.js:2:352
+    at Object.I.execCb (/third_party/require/require.js:6:12300)
+    at Object.B.check (/third_party/require/require.js:6:6850)
+    at Object.<anonymous> (/third_party/require/require.js:6:8952)
+    at chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/third_party/require/require.js:6:670
+    at chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/third_party/require/require.js:6:9310
+15:02:31 GMT+0800 (CST) (WARN) https://www.google.co.jp/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&ved=0CCIQFjABahUKEwiqz9T3h7LHAhVlx6YKHXOmBeU&url=http%3A%2F%2Fjasonchi.iteye.com%2Fblog%2F763208&ei=btjSVargAuWOmwXzzJaoDg&usg=AFQjCNFX9czX-NtYu7ommMQ5mcSUNoofbw&sig2=KgnNdgwgxEPtD2TXb558_w&bvm=bv.99804247,d.dGo: Couldn't initialize clearly custom detect
+    at Object.H [as isCustomFormat] (eval at finishLoadingScript (/content/require/require-config.js:2:113), <anonymous>:2:9079)
+    at Object.isSiteEligible (eval at finishLoadingScript (/content/require/require-config.js:2:113), <anonymous>:2:231)
+    at b (/content/tooltips/custom_tooltip_check.js:2:93)
+    at chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/content/tooltips/custom_tooltip_check.js:2:352
+    at Object.I.execCb (/third_party/require/require.js:6:12300)
+    at Object.B.check (/third_party/require/require.js:6:6850)
+    at Object.<anonymous> (/third_party/require/require.js:6:8952)
+    at chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/third_party/require/require.js:6:670
+    at chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/third_party/require/require.js:6:9310
+15:17:08 GMT+0800 (CST) (WARN) https://www.google.co.jp/url?sa=t&rct=j&q=&esrc=s&source=web&cd=6&ved=0CEYQFjAFahUKEwjb4Oahi7LHAhWi4qYKHVHkDE0&url=http%3A%2F%2Faugustl.com%2Fblog%2F2010%2Fdynamic_session_expiration_time_in_rails_3%2F&ei=69vSVZu_LKLFmwXRyLPoBA&usg=AFQjCNGFhhBf5Ko_JYdzdLNKKXocMtLJ_A&sig2=OJXVgfRYrrWHywYwgp_lDA&bvm=bv.99804247,d.dGo: Couldn't initialize clearly custom detect
+    at Object.H [as isCustomFormat] (eval at finishLoadingScript (/content/require/require-config.js:2:113), <anonymous>:2:9079)
+    at Object.isSiteEligible (eval at finishLoadingScript (/content/require/require-config.js:2:113), <anonymous>:2:231)
+    at b (/content/tooltips/custom_tooltip_check.js:2:93)
+    at chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/content/tooltips/custom_tooltip_check.js:2:352
+    at Object.I.execCb (/third_party/require/require.js:6:12300)
+    at Object.B.check (/third_party/require/require.js:6:6850)
+    at Object.<anonymous> (/third_party/require/require.js:6:8952)
+    at chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/third_party/require/require.js:6:670
+    at chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/third_party/require/require.js:6:9310

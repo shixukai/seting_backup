@@ -1,0 +1,46 @@
+12:43:08 GMT+0800 (CST) (WARN) https://www.baidu.com/link?url=fN3kqU4kTHrOM2K8tsZyfVz9yaLFy0aXu_wh1LW_RbbK5YAHGtDslD91Uge54fopxNKMSzoWlzYxpkBvvMw5HGQT0pUxj6tpdM0JWrNG8Wi&wd=&eqid=dd0175cc0001bf480000000455cec359: Couldn't initialize clearly custom detect
+    at Object.H [as isCustomFormat] (eval at finishLoadingScript (/content/require/require-config.js:2:113), <anonymous>:2:9079)
+    at Object.isSiteEligible (eval at finishLoadingScript (/content/require/require-config.js:2:113), <anonymous>:2:231)
+    at b (/content/tooltips/custom_tooltip_check.js:2:93)
+    at chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/content/tooltips/custom_tooltip_check.js:2:352
+    at Object.I.execCb (/third_party/require/require.js:6:12300)
+    at Object.B.check (/third_party/require/require.js:6:6850)
+    at Object.<anonymous> (/third_party/require/require.js:6:8952)
+    at chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/third_party/require/require.js:6:670
+    at chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/third_party/require/require.js:6:9310
+13:24:43 GMT+0800 (CST) (WARN) /background.html: failed login: EDAMUserException{"errorCode":8,"parameter":"username"}
+    at f (/js/main/Auth.js:2:1363)
+    at null.<anonymous> (/thrift/thrift-binary.js:2:7211)
+13:24:47 GMT+0800 (CST) (WARN) /background.html: failed login: EDAMUserException{"errorCode":8,"parameter":"username"}
+    at f (/js/main/Auth.js:2:1363)
+    at null.<anonymous> (/thrift/thrift-binary.js:2:7211)
+15:34:11 GMT+0800 (CST) (WARN) https://www.baidu.com/link?url=nWs-YuJ8K6-dFVP3h0lmb7GRHO3r-LMvrJPWzo0ay8np6oR9SB8IalyeGnjKlgRlK4It9hjzNAhpOH6zoA5o-6NweHr4mAylVglbo7iGMF7&wd=&eqid=bdbd545c0002e83e0000000455ceeb6e: Couldn't initialize clearly custom detect
+    at Object.H [as isCustomFormat] (eval at finishLoadingScript (/content/require/require-config.js:2:113), <anonymous>:2:9079)
+    at Object.isSiteEligible (eval at finishLoadingScript (/content/require/require-config.js:2:113), <anonymous>:2:231)
+    at b (/content/tooltips/custom_tooltip_check.js:2:93)
+    at chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/content/tooltips/custom_tooltip_check.js:2:352
+    at Object.I.execCb (/third_party/require/require.js:6:12300)
+    at Object.B.check (/third_party/require/require.js:6:6850)
+    at Object.<anonymous> (/third_party/require/require.js:6:8952)
+    at chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/third_party/require/require.js:6:670
+    at chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/third_party/require/require.js:6:9310
+15:55:01 GMT+0800 (CST) (WARN) https://www.baidu.com/link?url=z1VdkDXeg0uXZVQTyu0RnYMjnLdPNzNYbMzB1yXyEemRorKxsVgGrDkKZ0BwoqDE&wd=&eqid=b1d6653900007e3b0000000455cef052: Couldn't initialize clearly custom detect
+    at Object.H [as isCustomFormat] (eval at finishLoadingScript (/content/require/require-config.js:2:113), <anonymous>:2:9079)
+    at Object.isSiteEligible (eval at finishLoadingScript (/content/require/require-config.js:2:113), <anonymous>:2:231)
+    at b (/content/tooltips/custom_tooltip_check.js:2:93)
+    at chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/content/tooltips/custom_tooltip_check.js:2:352
+    at Object.I.execCb (/third_party/require/require.js:6:12300)
+    at Object.B.check (/third_party/require/require.js:6:6850)
+    at Object.<anonymous> (/third_party/require/require.js:6:8952)
+    at chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/third_party/require/require.js:6:670
+    at chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/third_party/require/require.js:6:9310
+15:58:16 GMT+0800 (CST) (WARN) http://tower.im/: Couldn't initialize clearly custom detect
+    at Object.H [as isCustomFormat] (eval at finishLoadingScript (/content/require/require-config.js:2:113), <anonymous>:2:9079)
+    at Object.isSiteEligible (eval at finishLoadingScript (/content/require/require-config.js:2:113), <anonymous>:2:231)
+    at b (/content/tooltips/custom_tooltip_check.js:2:93)
+    at chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/content/tooltips/custom_tooltip_check.js:2:352
+    at Object.I.execCb (/third_party/require/require.js:6:12300)
+    at Object.B.check (/third_party/require/require.js:6:6850)
+    at Object.<anonymous> (/third_party/require/require.js:6:8952)
+    at chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/third_party/require/require.js:6:670
+    at chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/third_party/require/require.js:6:9310

@@ -1,0 +1,27 @@
+{
+   "background": {
+      "scripts": [ "scripts/background.js" ]
+   },
+   "browser_action": {
+      "default_icon": {
+         "19": "image/off_icon_19.png",
+         "38": "image/off_icon_38.png"
+      },
+      "default_popup": "popup.html"
+   },
+   "default_locale": "en",
+   "description": "Falcon Proxy for SSLedge user. Simple, clear and easy to use.",
+   "icons": {
+      "128": "image/icon_128.png",
+      "24": "image/icon_24.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAv8Jk4TlO0N4NX/yEVPDQtDx9x0+lphzp16pWN5jJm8CFCupThHL+7ojEI9fHk7nSxc2d8s1QgzgZ/U3KcSHUiVVWKvChtyHcgNN6dbMkasOxkDJnrWCAiddbj+rDrXH/btVfkK55lWH5LPO7DBUKJqXo84MDQdP4SbYjJNJGTtBBuNJXEDKKOw3mY1aNiHtjjYZO8vaDRts39oeG1dkvhPoooSZVKGOF4KKLWjxqZw7bWe4Ne7waKx1BcaJesE3zgWOrq0oDwBXflNy9KD5D6KW885NJ5wVSxmlih8tRd++IEETccZdqp0nK0xRVlE7tkYemE67PD7H72WJ2M5WGMwIDAQAB",
+   "manifest_version": 2,
+   "name": "SSLedge Falcon Proxy",
+   "permissions": [ "\u003Call_urls>", "webRequest", "webRequestBlocking", "notifications", "proxy" ],
+   "sandbox": {
+      "pages": [ "sandbox.html" ]
+   },
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.7.9"
+}

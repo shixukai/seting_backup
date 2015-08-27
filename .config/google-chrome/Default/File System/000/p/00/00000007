@@ -1,0 +1,10 @@
+11:08:29 GMT+0800 (CST) (WARN) https://www.google.co.jp/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0CCAQFjAAahUKEwirxtvgoMPHAhUGEpQKHQEjBsY&url=http%3A%2F%2Fapidock.com%2Frails%2FString%2Fhtml_safe&ei=KNzbVauSFoak0ASBxpiwDA&usg=AFQjCNFJ9nGnwkULIWFj879ZErRc90AgMg&sig2=1najf0tXvOjmn6DqTlAQmw: Couldn't initialize clearly custom detect
+    at Object.H [as isCustomFormat] (eval at finishLoadingScript (/content/require/require-config.js:2:113), <anonymous>:2:9079)
+    at Object.isSiteEligible (eval at finishLoadingScript (/content/require/require-config.js:2:113), <anonymous>:2:538)
+    at b (/content/tooltips/custom_tooltip_check.js:2:93)
+    at chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/content/tooltips/custom_tooltip_check.js:2:352
+    at Object.I.execCb (/third_party/require/require.js:6:12300)
+    at Object.B.check (/third_party/require/require.js:6:6850)
+    at Object.<anonymous> (/third_party/require/require.js:6:8952)
+    at chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/third_party/require/require.js:6:670
+    at chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/third_party/require/require.js:6:9310

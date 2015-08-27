@@ -1,0 +1,1 @@
+var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-43276752-1"]),require(["https://ssl.google-analytics.com/ga.js"]),define(function(){"use strict";var a=chrome.runtime.getManifest().version;return Object.freeze({push:function(b){return"_trackEvent"===b[0]&&3===b.length&&b.push(a),_gaq.push(b),this},track:function(a,b){return this.push(["_trackEvent",a,b])}})});

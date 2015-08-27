@@ -1,0 +1,21 @@
+[global_config]
+  handle_size = 1
+[keybindings]
+[profiles]
+  [[default]]
+    use_system_font = False
+    login_shell = True
+    background_image = None
+    foreground_color = "#ffffff"
+    show_titlebar = False
+    font = Droid Sans Mono Slashed for Powerline 11
+    background_color = "#300a24"
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]
