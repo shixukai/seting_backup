@@ -161,6 +161,8 @@ Plugin 'https://github.com/tpope/vim-endwise.git'
 Plugin 'https://github.com/scrooloose/nerdcommenter.git'
 "tpope/vim-surround
 Plugin 'tpope/vim-surround'
+"terryma/vim-multiple-cursors
+Plugin 'terryma/vim-multiple-cursors'
 
 "#########################################################
 "#########################################################
