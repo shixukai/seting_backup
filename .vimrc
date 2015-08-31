@@ -84,7 +84,7 @@ let g:ctrlsf_regex_pattern = 1
 let g:ctrlsf_position = 'bottom'
 "****************************************************************
 "vim-surround设置
-let g:surround_45 = "<% \r %>"
+let g:surround_45 = "<%- \r %>"
 let g:surround_61 = "<%= \r %>"
 
 
