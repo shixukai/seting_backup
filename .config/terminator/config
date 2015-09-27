@@ -9,7 +9,7 @@
     background_image = None
     foreground_color = "#ffffff"
     show_titlebar = False
-    font = Droid Sans Mono Slashed for Powerline 11
+    font = Liberation Mono for Powerline 11
     background_color = "#300a24"
 [layouts]
   [[default]]

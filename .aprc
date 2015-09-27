@@ -1,0 +1,3 @@
+AwesomePrint.defaults = {
+  index: false
+}

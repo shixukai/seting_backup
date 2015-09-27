@@ -3,8 +3,12 @@ set -v on
 
 #设定vim配置文件链接
 Cur_dir=$(pwd)
+rm -rf ~/.aprc
+ln -sf $Cur_dir/.aprc ~/.aprc
 rm -rf ~/.vimrc
 ln -sf $Cur_dir/.vimrc ~/.vimrc
+rm -rf ~/.pryrc
+ln -sf $Cur_dir/.pryrc ~/.pryrc
 rm -rf ~/.vim/colors
 ln -sf $Cur_dir/colors ~/.vim/colors
 rm -rf ~/.config/terminator
