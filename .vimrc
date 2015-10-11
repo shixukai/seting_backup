@@ -33,6 +33,27 @@ let g:ctrlp_map = '<c-p>'
 "vim-ruby execute 
 map <F5> :!ruby % <CR>
 vmap <c-c> "+y
+"****************************************************************
+"vim-trailing-whitespace
+map <leader><space> :FixWhitespace<cr>
+"****************************************************************
+"closetag配置
+let g:closetag_html_style=1
+
+"****************************************************************
+"syntastic配置
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_ruby_checkers = ['mri']
+let g:syntastic_ruby_mri_exec = '/Users/Douya/.rbenv/versions/2.2.3/bin/ruby'
+let g:syntastic_javascript_checkers = ['eslint', 'jshint']
+
+"****************************************************************
 
 "****************************************************************
 "Track the engine.
@@ -163,6 +184,11 @@ Plugin 'https://github.com/scrooloose/nerdcommenter.git'
 Plugin 'tpope/vim-surround'
 "terryma/vim-multiple-cursors
 Plugin 'terryma/vim-multiple-cursors'
+
+Bundle 'vim-scripts/matchit.zip'
+Bundle 'Valloric/MatchTagAlways'
+Bundle 'docunext/closetag.vim'
+Bundle 'bronson/vim-trailing-whitespace'
 
 "#########################################################
 "#########################################################
