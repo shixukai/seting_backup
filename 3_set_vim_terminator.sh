@@ -13,6 +13,8 @@ rm -rf ~/.vim/colors
 ln -sf $Cur_dir/colors ~/.vim/colors
 rm -rf ~/.config/terminator
 ln -sf $Cur_dir/.config/terminator ~/.config/terminator
+rm -rf ~/.tigrc
+ln -sf $Cur_dir/.tigrc ~/.tigrc
 
 #通过Vundle安装vim插件
 vim +PluginInstall +qall
