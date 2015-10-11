@@ -134,8 +134,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'bling/vim-airline'
 
 Bundle 'dyng/ctrlsf.vim'
-
-Plugin 'mileszs/ack.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'rking/ag.vim'
 "majutsushi/tagbar
 Plugin 'https://github.com/majutsushi/tagbar.git'
 
