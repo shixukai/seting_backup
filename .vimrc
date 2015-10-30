@@ -23,7 +23,9 @@ set nu
 set mouse=a
 "设定搜索时不区分大小写
 set ignorecase
-colorscheme darkblue
+"colorscheme darkblue
+colorscheme molokai
+let g:rehash256 = 1
 
 imap kk <ESC>
 
@@ -79,10 +81,31 @@ let g:UltiSnipsEditSplit="vertical"
 "autocmd vimenter * NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"默认光标在右侧文件编辑区
+autocmd VimEnter * wincmd w
 "close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 "nerdTee窗口宽度
 let NERDTreeWinSize = 20
+" NERDTress File highlighting
+function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+  exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+  exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+endfunction
+
+call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
+call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
+call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
+call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
+call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 "****************************************************************
 
 "设置Tagbar启动快捷键
@@ -189,6 +212,9 @@ Bundle 'vim-scripts/matchit.zip'
 Bundle 'Valloric/MatchTagAlways'
 Bundle 'docunext/closetag.vim'
 Bundle 'bronson/vim-trailing-whitespace'
+"vim平滑滚动
+Bundle 'yonchu/accelerated-smooth-scroll'
+Plugin 'flazz/vim-colorschemes'
 
 "#########################################################
 "#########################################################
