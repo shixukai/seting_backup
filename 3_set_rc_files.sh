@@ -15,6 +15,10 @@ rm -rf ~/.config/terminator
 ln -sf $Cur_dir/.config/terminator ~/.config/terminator
 rm -rf ~/.tigrc
 ln -sf $Cur_dir/.tigrc ~/.tigrc
+rm -rf ~/.zshrc
+ln -sf $Cur_dir/.zshrc ~/.zshrc
+rm -rf ~/.zprofile
+ln -sf $Cur_dir/.zprofile ~/.zprofile
 
 #通过Vundle安装vim插件
 vim +PluginInstall +qall

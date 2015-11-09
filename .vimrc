@@ -8,7 +8,7 @@ set autoread " 设置当文件被改动时自动载入
 
 "Ctags相关设置
 set tags=tags
-set autochdir
+"set autochdir
 "设置自动触发滚动的行数
 set scrolloff=6
 "设定搜索即定位
@@ -25,7 +25,12 @@ set mouse=a
 set ignorecase
 "colorscheme darkblue
 colorscheme molokai
+"设定macvim默认字体
+set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12
+
 let g:rehash256 = 1
+"启用html格式化插件,见:help xml-plugin
+filetype plugin on
 
 imap kk <ESC>
 
@@ -33,8 +38,10 @@ imap kk <ESC>
 let g:ctrlp_map = '<c-p>'
 
 "vim-ruby execute
-map <F5> :!ruby % <CR>
-vmap <c-c> "+y
+"map <F5> :!ruby % <CR>
+:let mapleader = ","
+vmap <Leader>c "+y
+map <Leader>p "+p
 "****************************************************************
 "vim-trailing-whitespace
 map <leader><space> :FixWhitespace<cr>
@@ -53,7 +60,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_ruby_checkers = ['mri']
 let g:syntastic_ruby_mri_exec = '/Users/Douya/.rbenv/versions/2.2.3/bin/ruby'
-let g:syntastic_javascript_checkers = ['eslint', 'jshint']
+let g:syntastic_javascript_checkers = ['jsxhint']
 
 "****************************************************************
 
@@ -115,7 +122,7 @@ nmap <F8> :TagbarToggle<CR>
 
 "****************************************************************
 "设置打开CtrlSF的快捷键为ctrl+f
-nmap     <C-f> <Plug>CtrlSFPrompt
+nmap ,f <Plug>CtrlSFPrompt
 "ss......................适用于normal模式，搜索当前光标所在的单词
 nmap ss :CtrlSF <C-R><C-W><CR>
 "ss......................适用于visual模式，搜索当前选中的文字
@@ -212,9 +219,10 @@ Bundle 'vim-scripts/matchit.zip'
 Bundle 'Valloric/MatchTagAlways'
 Bundle 'docunext/closetag.vim'
 Bundle 'bronson/vim-trailing-whitespace'
-"vim平滑滚动
-Bundle 'yonchu/accelerated-smooth-scroll'
 Plugin 'flazz/vim-colorschemes'
+"html代码格式化插件
+Bundle 'othree/xml.vim'
+
 
 "#########################################################
 "#########################################################
