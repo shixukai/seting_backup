@@ -13,6 +13,7 @@ set tags=tags
 set scrolloff=6
 "设定搜索即定位
 set incsearch
+set hlsearch
 "设定默认可以使用退格键
 set backspace=indent,eol,start
 set mouse=a
@@ -25,8 +26,13 @@ set mouse=a
 set ignorecase
 "colorscheme darkblue
 colorscheme molokai
+
+"*****************************************************
 "设定macvim默认字体
 set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12
+"设定菜单语言
+set langmenu=zh_CN.UTF-8
+"*****************************************************
 
 let g:rehash256 = 1
 "启用html格式化插件,见:help xml-plugin
@@ -36,11 +42,20 @@ imap kk <ESC>
 
 " CtrlP 插件配置选项
 let g:ctrlp_map = '<c-p>'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux"
+set wildignore+=vendor/rails/**
+set wildignore+=vendor/cache/**
+set wildignore+=public/static/spm_modules/**
+set wildignore+=public/static/node_modules/**
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_use_caching = 0
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+set grepprg=ag\ --nogroup\ --nocolor
 
 "vim-ruby execute
 "map <F5> :!ruby % <CR>
 :let mapleader = ","
-vmap <Leader>c "+y
+vmap <C-c> "+y
 map <Leader>p "+p
 "****************************************************************
 "vim-trailing-whitespace
@@ -60,7 +75,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_ruby_checkers = ['mri']
 let g:syntastic_ruby_mri_exec = '/Users/Douya/.rbenv/versions/2.2.3/bin/ruby'
-let g:syntastic_javascript_checkers = ['jsxhint']
+let g:syntastic_javascript_checkers = ['eslhint']
 
 "****************************************************************
 
@@ -86,6 +101,7 @@ let g:UltiSnipsEditSplit="vertical"
 
 "****************************************************************
 "autocmd vimenter * NERDTree
+map <Leader>n :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 "默认光标在右侧文件编辑区
@@ -243,3 +259,5 @@ filetype plugin indent on    " required
 "##############################################################
 
 execute pathogen#infect()
+
+set suffixesadd+=.js
