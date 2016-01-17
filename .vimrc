@@ -75,7 +75,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_ruby_checkers = ['mri']
 let g:syntastic_ruby_mri_exec = '/Users/Douya/.rbenv/versions/2.2.3/bin/ruby'
-let g:syntastic_javascript_checkers = ['eslhint']
+let g:syntastic_javascript_checkers = ['eslint']
 
 "****************************************************************
 
