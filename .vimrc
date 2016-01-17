@@ -75,7 +75,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_ruby_checkers = ['mri']
 let g:syntastic_ruby_mri_exec = '/Users/Douya/.rbenv/versions/2.2.3/bin/ruby'
-let g:syntastic_javascript_checkers = ['eslhint']
+let g:syntastic_javascript_checkers = ['eslint']
 
 "****************************************************************
 
@@ -95,9 +95,21 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 "****************************************************************
+"vim copy filename to clipboard
+"****************************************************************
 
+function! CopyProjectFileName()
+  let @*= expand("%")
+  echo expand("%")
+endfunction
 
+function! CopyFileName()
+  let @*= expand("%:p")
+  echo expand("%:p")
+endfunction
 
+map <Leader>fs :call CopyFileName()<CR>
+map <Leader>fl :call CopyProjectFileName()<CR>
 
 "****************************************************************
 "autocmd vimenter * NERDTree
