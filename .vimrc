@@ -248,9 +248,6 @@ Bundle 'Valloric/MatchTagAlways'
 Bundle 'docunext/closetag.vim'
 Bundle 'bronson/vim-trailing-whitespace'
 Plugin 'flazz/vim-colorschemes'
-"html代码格式化插件
-Bundle 'othree/xml.vim'
-
 
 "#########################################################
 "#########################################################
