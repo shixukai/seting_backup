@@ -55,6 +55,10 @@ set grepprg=ag\ --nogroup\ --nocolor
 "vim-ruby execute
 "map <F5> :!ruby % <CR>
 :let mapleader = ","
+nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+nnoremap <silent> <Leader>< :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
+nnoremap <silent> <Leader>> :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 vmap <C-c> "+y
 map <Leader>p "+p
 "****************************************************************
