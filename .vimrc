@@ -190,7 +190,10 @@ nnoremap ]b :bn<CR>
 "让airline显示颜色
 set t_Co=256
 "****************************************************************
-
+"vim-jsx
+let g:jsx_ext_required = 0
+"restrict JSX to files with the pre-v0.12 @jsx React.DOM pragma
+let g:jsx_pragma_required = 1
 
 
 "##############################################################
@@ -246,7 +249,8 @@ Plugin 'https://github.com/scrooloose/nerdcommenter.git'
 Plugin 'tpope/vim-surround'
 "terryma/vim-multiple-cursors
 Plugin 'terryma/vim-multiple-cursors'
-
+"Syntax highlighting and indenting for JSX
+Bundle 'mxw/vim-jsx'
 Bundle 'vim-scripts/matchit.zip'
 Bundle 'Valloric/MatchTagAlways'
 Bundle 'docunext/closetag.vim'
