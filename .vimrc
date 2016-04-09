@@ -27,6 +27,11 @@ set ignorecase
 "colorscheme darkblue
 colorscheme molokai
 
+set cursorline
+hi CursorLine term=bold cterm=bold guibg=Grey40
+set cursorcolumn
+hi CursorColumn term=bold cterm=bold guibg=Grey40
+
 "*****************************************************
 "设定macvim默认字体
 set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12
@@ -82,6 +87,16 @@ let g:syntastic_ruby_mri_exec = '/Users/Douya/.rbenv/versions/2.2.3/bin/ruby'
 let g:syntastic_javascript_checkers = ['eslint']
 
 "****************************************************************
+"easymotion 配置
+"****************************************************************
+let g:EasyMotion_smartcase = 1
+"let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
+map <Leader><leader>h <Plug>(easymotion-linebackward)
+map <Leader><Leader>j <Plug>(easymotion-j)
+map <Leader><Leader>k <Plug>(easymotion-k)
+map <Leader><leader>l <Plug>(easymotion-lineforward)
+" 重复上一次操作, 类似repeat插件, 很强大
+map <Leader><leader>. <Plug>(easymotion-repeat)
 
 "****************************************************************
 "Track the engine.
@@ -256,6 +271,7 @@ Bundle 'Valloric/MatchTagAlways'
 Bundle 'docunext/closetag.vim'
 Bundle 'bronson/vim-trailing-whitespace'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'easymotion/vim-easymotion'
 
 "#########################################################
 "#########################################################
