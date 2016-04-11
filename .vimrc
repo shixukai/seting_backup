@@ -272,6 +272,8 @@ Bundle 'docunext/closetag.vim'
 Bundle 'bronson/vim-trailing-whitespace'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'easymotion/vim-easymotion'
+"符号自动补全,  :help delimitMate for detailed information.
+Bundle 'Raimondi/delimitMate'
 
 "#########################################################
 "#########################################################
