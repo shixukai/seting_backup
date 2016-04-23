@@ -5,7 +5,7 @@ filetype on           " 启用文件类型检查
 filetype indent on    " 启用文件类型缩进
 filetype plugin on    " 启用指定文件类型插
 set autoread " 设置当文件被改动时自动载入
-
+set autoindent
 "Ctags相关设置
 set tags=tags
 "set autochdir
@@ -27,10 +27,10 @@ set ignorecase
 "colorscheme darkblue
 colorscheme molokai
 
-set cursorline
-hi CursorLine term=bold cterm=bold guibg=Grey40
-set cursorcolumn
-hi CursorColumn term=bold cterm=bold guibg=Grey40
+"set cursorline
+"hi CursorLine term=bold cterm=bold guibg=Grey40
+"set cursorcolumn
+"hi CursorColumn term=bold cterm=bold guibg=Grey40
 
 "*****************************************************
 "设定macvim默认字体
@@ -59,6 +59,8 @@ set grepprg=ag\ --nogroup\ --nocolor
 
 "vim-ruby execute
 "map <F5> :!ruby % <CR>
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
 :let mapleader = ","
 nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
@@ -207,6 +209,7 @@ set t_Co=256
 "****************************************************************
 "vim-jsx
 let g:jsx_ext_required = 0
+let g:javascript_enable_domhtmlcss = 0
 "restrict JSX to files with the pre-v0.12 @jsx React.DOM pragma
 "let g:jsx_pragma_required = 1
 
@@ -274,6 +277,7 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'easymotion/vim-easymotion'
 "符号自动补全,  :help delimitMate for detailed information.
 Bundle 'Raimondi/delimitMate'
+Plugin 'pangloss/vim-javascript'
 
 "#########################################################
 "#########################################################
