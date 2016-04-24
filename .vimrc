@@ -59,9 +59,10 @@ set grepprg=ag\ --nogroup\ --nocolor
 
 "vim-ruby execute
 "map <F5> :!ruby % <CR>
-nmap <silent> <leader>ev :e $MYVIMRC<CR>
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
 :let mapleader = ","
+
+nmap <silent> <leader>ee :e $MYVIMRC<CR>
+nmap <silent> <leader>so :so $MYVIMRC<CR>
 nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 nnoremap <silent> <Leader>< :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
@@ -101,22 +102,21 @@ map <Leader><leader>l <Plug>(easymotion-lineforward)
 map <Leader><leader>. <Plug>(easymotion-repeat)
 
 "****************************************************************
-"Track the engine.
-"Plugin 'SirVer/ultisnips'
-
-" Snippets are separated from the engine. Add this if you want them:
-"Plugin 'honza/vim-snippets'
-
-" Trigger configuration. Do not use <tab> if you use
-"https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
+"
 "****************************************************************
-"vim copy filename to clipboard
+"
+"****************************************************************
+"
+"****************************************************************
+"Vim will look for a tags file in the directory of the current file first, then in the current directory, then up and up until it reaches $HOME.
+"in shell: $ctags -R --exclude=node_modules --exclude=.meteor --exclude='packages/*/.build/'
+set tags=./tags,tags;$HOME
+autocmd BufWritePost,FileWritePost *.js silent! !jsctags . &
+"****************************************************************
+
+"****************************************************************
+"jsx
+let g:jsx_ext_required = 0
 "****************************************************************
 
 function! CopyProjectFileName()
@@ -207,11 +207,6 @@ nnoremap ]b :bn<CR>
 "让airline显示颜色
 set t_Co=256
 "****************************************************************
-"vim-jsx
-let g:jsx_ext_required = 0
-let g:javascript_enable_domhtmlcss = 0
-"restrict JSX to files with the pre-v0.12 @jsx React.DOM pragma
-"let g:jsx_pragma_required = 1
 
 
 "##############################################################
@@ -249,8 +244,6 @@ Plugin 'https://github.com/kien/ctrlp.vim.git'
 "vim-snippets
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
 "NERD Tree
 Plugin 'https://github.com/scrooloose/nerdtree.git'
 "slim-template/vim-slim
@@ -268,7 +261,6 @@ Plugin 'tpope/vim-surround'
 "terryma/vim-multiple-cursors
 Plugin 'terryma/vim-multiple-cursors'
 "Syntax highlighting and indenting for JSX
-Bundle 'mxw/vim-jsx'
 Bundle 'vim-scripts/matchit.zip'
 Bundle 'Valloric/MatchTagAlways'
 Bundle 'docunext/closetag.vim'
@@ -277,8 +269,8 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'easymotion/vim-easymotion'
 "符号自动补全,  :help delimitMate for detailed information.
 Bundle 'Raimondi/delimitMate'
+Bundle 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
-
 "#########################################################
 "#########################################################
 " All of your Plugins must be added before the following line
