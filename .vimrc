@@ -135,6 +135,7 @@ map <Leader>fl :call CopyProjectFileName()<CR>
 "****************************************************************
 "autocmd vimenter * NERDTree
 map <Leader>n :NERDTreeToggle<CR>
+map <leader>r :NERDTreeFind<cr>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 "默认光标在右侧文件编辑区

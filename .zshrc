@@ -1,11 +1,14 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/Douya/.oh-my-zsh
+export ANDROID_HOME=/usr/local/opt/android-sdk
 
+eval "$(docker-machine env)"
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+#ZSH_THEME="robbyrussell"
+ZSH_THEME="honukai"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -90,3 +93,7 @@ eval $(thefuck --alias)
 
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
+export ANDROID_NDK_HOME=/usr/local/Cellar/android-ndk/r12
+export ANDROID_NDK_HOME=/usr/local/Cellar/android-ndk-r10e/r10e
+
+export PATH="$HOME/.yarn/bin:$PATH"
