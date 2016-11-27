@@ -1,4 +1,4 @@
-execute pathogen#infect()
+"execute pathogen#infect()
 set nocompatible      " 我们使用的是vim不是vi
 syntax on             " 启用语法高亮
 filetype on           " 启用文件类型检查
@@ -293,6 +293,6 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 "##############################################################
 
-execute pathogen#infect()
+"execute pathogen#infect()
 
 set suffixesadd+=.js
