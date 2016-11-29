@@ -102,36 +102,6 @@ map <Leader><leader>l <Plug>(easymotion-lineforward)
 map <Leader><leader>. <Plug>(easymotion-repeat)
 
 "****************************************************************
-<<<<<<< .merge_file_U8Ii2k
-""Track the engine.
-""Plugin 'SirVer/ultisnips'
-
-"" Snippets are separated from the engine. Add this if you want them:
-""Plugin 'honza/vim-snippets'
-
-"" Trigger configuration. Do not use <tab> if you use
-""https://github.com/Valloric/YouCompleteMe.
-"let g:UltiSnipsExpandTrigger="<tab>"
-"let g:UltiSnipsJumpForwardTrigger="<c-b>"
-"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-"" If you want :UltiSnipsEdit to split your window.
-"let g:UltiSnipsEditSplit="vertical"
-=======
-"
-"****************************************************************
-"
-"****************************************************************
-"
-"****************************************************************
-"Vim will look for a tags file in the directory of the current file first, then in the current directory, then up and up until it reaches $HOME.
-"in shell: $ctags -R --exclude=node_modules --exclude=.meteor --exclude='packages/*/.build/'
-set tags=./tags,tags;$HOME
-autocmd BufWritePost,FileWritePost *.js silent! !jsctags . &
-"****************************************************************
-
->>>>>>> .merge_file_Pv1OXx
-"****************************************************************
 "jsx
 let g:jsx_ext_required = 0
 "****************************************************************
