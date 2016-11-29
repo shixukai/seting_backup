@@ -5,7 +5,7 @@ filetype on           " 启用文件类型检查
 filetype indent on    " 启用文件类型缩进
 filetype plugin on    " 启用指定文件类型插
 set autoread " 设置当文件被改动时自动载入
-
+set autoindent
 "Ctags相关设置
 set tags=tags
 "set autochdir
@@ -27,10 +27,10 @@ set ignorecase
 "colorscheme darkblue
 colorscheme molokai
 
-set cursorline
-hi CursorLine term=bold cterm=bold guibg=Grey40
-set cursorcolumn
-hi CursorColumn term=bold cterm=bold guibg=Grey40
+"set cursorline
+"hi CursorLine term=bold cterm=bold guibg=Grey40
+"set cursorcolumn
+"hi CursorColumn term=bold cterm=bold guibg=Grey40
 
 "*****************************************************
 "设定macvim默认字体
@@ -60,6 +60,9 @@ set grepprg=ag\ --nogroup\ --nocolor
 "vim-ruby execute
 "map <F5> :!ruby % <CR>
 :let mapleader = ","
+
+nmap <silent> <leader>ee :e $MYVIMRC<CR>
+nmap <silent> <leader>so :so $MYVIMRC<CR>
 nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 nnoremap <silent> <Leader>< :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
@@ -99,6 +102,7 @@ map <Leader><leader>l <Plug>(easymotion-lineforward)
 map <Leader><leader>. <Plug>(easymotion-repeat)
 
 "****************************************************************
+<<<<<<< .merge_file_U8Ii2k
 ""Track the engine.
 ""Plugin 'SirVer/ultisnips'
 
@@ -113,8 +117,23 @@ map <Leader><leader>. <Plug>(easymotion-repeat)
 
 "" If you want :UltiSnipsEdit to split your window.
 "let g:UltiSnipsEditSplit="vertical"
+=======
+"
 "****************************************************************
-"vim copy filename to clipboard
+"
+"****************************************************************
+"
+"****************************************************************
+"Vim will look for a tags file in the directory of the current file first, then in the current directory, then up and up until it reaches $HOME.
+"in shell: $ctags -R --exclude=node_modules --exclude=.meteor --exclude='packages/*/.build/'
+set tags=./tags,tags;$HOME
+autocmd BufWritePost,FileWritePost *.js silent! !jsctags . &
+"****************************************************************
+
+>>>>>>> .merge_file_Pv1OXx
+"****************************************************************
+"jsx
+let g:jsx_ext_required = 0
 "****************************************************************
 
 function! CopyProjectFileName()
@@ -133,6 +152,7 @@ map <Leader>fl :call CopyProjectFileName()<CR>
 "****************************************************************
 "autocmd vimenter * NERDTree
 map <Leader>n :NERDTreeToggle<CR>
+map <leader>r :NERDTreeFind<cr>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 "默认光标在右侧文件编辑区
@@ -205,10 +225,6 @@ nnoremap ]b :bn<CR>
 "让airline显示颜色
 set t_Co=256
 "****************************************************************
-"vim-jsx
-let g:jsx_ext_required = 0
-"restrict JSX to files with the pre-v0.12 @jsx React.DOM pragma
-"let g:jsx_pragma_required = 1
 
 
 "##############################################################
@@ -244,10 +260,7 @@ Plugin 'Yggdroot/indentLine'
 "CtrlP
 Plugin 'https://github.com/kien/ctrlp.vim.git'
 "vim-snippets
-"Plugin 'MarcWeber/vim-addon-mw-utils'
-"Plugin 'tomtom/tlib_vim'
-"Plugin 'SirVer/ultisnips'
-"Plugin 'honza/vim-snippets'
+
 "NERD Tree
 Plugin 'https://github.com/scrooloose/nerdtree.git'
 "slim-template/vim-slim
@@ -265,7 +278,6 @@ Plugin 'tpope/vim-surround'
 "terryma/vim-multiple-cursors
 Plugin 'terryma/vim-multiple-cursors'
 "Syntax highlighting and indenting for JSX
-Bundle 'mxw/vim-jsx'
 Bundle 'vim-scripts/matchit.zip'
 Bundle 'Valloric/MatchTagAlways'
 Bundle 'docunext/closetag.vim'
@@ -274,7 +286,8 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'easymotion/vim-easymotion'
 "符号自动补全,  :help delimitMate for detailed information.
 Bundle 'Raimondi/delimitMate'
-
+Bundle 'mxw/vim-jsx'
+Plugin 'pangloss/vim-javascript'
 "#########################################################
 "#########################################################
 " All of your Plugins must be added before the following line

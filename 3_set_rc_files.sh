@@ -19,6 +19,8 @@ rm -rf ~/.zshrc
 ln -sf $Cur_dir/.zshrc ~/.zshrc
 rm -rf ~/.zprofile
 ln -sf $Cur_dir/.zprofile ~/.zprofile
+rm -rf ~/.ctags
+ln -sf $Cur_dir/.ctags ~/.ctags
 
 #通过Vundle安装vim插件
 vim +PluginInstall +qall
