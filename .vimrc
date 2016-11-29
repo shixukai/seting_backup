@@ -99,20 +99,20 @@ map <Leader><leader>l <Plug>(easymotion-lineforward)
 map <Leader><leader>. <Plug>(easymotion-repeat)
 
 "****************************************************************
-"Track the engine.
-"Plugin 'SirVer/ultisnips'
+""Track the engine.
+""Plugin 'SirVer/ultisnips'
 
-" Snippets are separated from the engine. Add this if you want them:
-"Plugin 'honza/vim-snippets'
+"" Snippets are separated from the engine. Add this if you want them:
+""Plugin 'honza/vim-snippets'
 
-" Trigger configuration. Do not use <tab> if you use
-"https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+"" Trigger configuration. Do not use <tab> if you use
+""https://github.com/Valloric/YouCompleteMe.
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
+"" If you want :UltiSnipsEdit to split your window.
+"let g:UltiSnipsEditSplit="vertical"
 "****************************************************************
 "vim copy filename to clipboard
 "****************************************************************
@@ -244,10 +244,10 @@ Plugin 'Yggdroot/indentLine'
 "CtrlP
 Plugin 'https://github.com/kien/ctrlp.vim.git'
 "vim-snippets
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+"Plugin 'MarcWeber/vim-addon-mw-utils'
+"Plugin 'tomtom/tlib_vim'
+"Plugin 'SirVer/ultisnips'
+"Plugin 'honza/vim-snippets'
 "NERD Tree
 Plugin 'https://github.com/scrooloose/nerdtree.git'
 "slim-template/vim-slim
