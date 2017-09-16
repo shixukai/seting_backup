@@ -27,6 +27,16 @@ set ignorecase
 "colorscheme darkblue
 colorscheme molokai
 
+
+"*****************************************************
+"css 自动补全设置
+:imap <tab> <c-x><c-o> 
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS 
+
+"*****************************************************
+
+
+
 "set cursorline
 "hi CursorLine term=bold cterm=bold guibg=Grey40
 "set cursorcolumn
@@ -254,6 +264,7 @@ Bundle 'docunext/closetag.vim'
 Bundle 'bronson/vim-trailing-whitespace'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'ap/vim-css-color'
 "符号自动补全,  :help delimitMate for detailed information.
 Bundle 'Raimondi/delimitMate'
 Bundle 'mxw/vim-jsx'
