@@ -1,30 +1,30 @@
 #! /bin/bash
-set -v on
+#set -v on
 
 
-sudo apt-get -f install
-sudo apt-get update
+#sudo apt-get -f install
+#sudo apt-get update
 
 
 #安装Chrome
-cd ~
-if [ ! -f "google-chrome-stable_current_amd64.deb" ]; then
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo dpkg -i google-chrome-stable_current_amd64.deb
-else
-echo 安装包已存在,开始安装
-sudo dpkg -i google-chrome-stable_current_amd64.deb
-fi
+#cd ~
+#if [ ! -f "google-chrome-stable_current_amd64.deb" ]; then
+#wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+#sudo dpkg -i google-chrome-stable_current_amd64.deb
+#else
+#echo 安装包已存在,开始安装
+#sudo dpkg -i google-chrome-stable_current_amd64.deb
+#fi
 
-#安装基础包
-sudo apt-get install autoconf automake bison build-essential curl exuberant-ctags git-core libreadline6 libreadline6-dev libreadline-dev libsqlite3-0 libsqlite3-dev libssl-dev libyaml-dev libc6-dev libncurses5-dev libtool libxml2-dev libxslt1-dev openssl sqlite3 subversion zlib1g zlib1g-dev software-properties-common imagemagick libmagickwand-dev libpcre3-dev libcurl4-openssl-dev wget htop iftop python-pycurl libpq-dev node.js fcitx
+##安装基础包
+#sudo apt-get install autoconf automake bison build-essential curl exuberant-ctags git-core libreadline6 libreadline6-dev libreadline-dev libsqlite3-0 libsqlite3-dev libssl-dev libyaml-dev libc6-dev libncurses5-dev libtool libxml2-dev libxslt1-dev openssl sqlite3 subversion zlib1g zlib1g-dev software-properties-common imagemagick libmagickwand-dev libpcre3-dev libcurl4-openssl-dev wget htop iftop python-pycurl libpq-dev node.js fcitx
 
 
-sudo apt-get install git
-sudo apt-get install ack-grep
-sudo apt-get install zsh
-sudo apt-get install vim-syntastic
-sudo apt-get install vim-gnome
+#sudo apt-get install git
+#sudo apt-get install ack-grep
+#sudo apt-get install zsh
+#sudo apt-get install vim-syntastic
+#sudo apt-get install vim-gnome
 
 #安装pathogen
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
@@ -49,11 +49,11 @@ mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
 fc-cache -vf ~/.fonts/
 
 #安装rbenv及配置
-git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
-git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+#git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+#git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 
 #安装oh-my-zsh
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+#sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 #设置oh-my-zsh为默认shell
-chsh -s /bin/zsh
+#chsh -s /bin/zsh
 
