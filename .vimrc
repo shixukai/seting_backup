@@ -87,17 +87,6 @@ map <leader><space> :FixWhitespace<cr>
 let g:closetag_html_style=1
 
 "****************************************************************
-"syntastic配置
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_ruby_checkers = ['mri']
-let g:syntastic_ruby_mri_exec = '/Users/Douya/.rbenv/versions/2.2.3/bin/ruby'
-let g:syntastic_javascript_checkers = ['eslint']
 
 "****************************************************************
 "easymotion 配置
@@ -204,8 +193,17 @@ nnoremap [b :bp<CR>
 nnoremap ]b :bn<CR>
 "让airline显示颜色
 set t_Co=256
-"****************************************************************
 
+"****************************************************************
+" w0rp/ale
+let g:ale_lint_on_save = 0
+let g:ale_linters = {'jsx': ['stylelint', 'eslint']}
+let g:ale_linter_aliases = {'jsx': 'css'}
+
+"****************************************************************
+" vim-expand-region
+map K <Plug>(expand_region_expand)
+map J <Plug>(expand_region_shrink)
 
 "##############################################################
 "以下是vundle配置
@@ -213,80 +211,62 @@ set t_Co=256
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-"set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-"#f.vim'#######################################################
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
 "########################################################
 "bling/vim-airline
-Plugin 'bling/vim-airline'
+Plug 'bling/vim-airline'
 
-Bundle 'dyng/ctrlsf.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'rking/ag.vim'
+Plug 'dyng/ctrlsf.vim'
+"Plug 'scrooloose/syntastic'
+Plug 'rking/ag.vim'
 "majutsushi/tagbar
-Plugin 'https://github.com/majutsushi/tagbar.git'
+Plug 'https://github.com/majutsushi/tagbar.git'
 
-Plugin 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine'
 "CtrlP
-Plugin 'https://github.com/kien/ctrlp.vim.git'
+Plug 'https://github.com/kien/ctrlp.vim.git'
 "vim-snippets
 
 "NERD Tree
-Plugin 'https://github.com/scrooloose/nerdtree.git'
-"slim-template/vim-slim
-Bundle 'slim-template/vim-slim.git'
+Plug 'https://github.com/scrooloose/nerdtree.git'
 "tpope/vim-rails
-Plugin 'tpope/vim-rails'
+Plug 'tpope/vim-rails'
 
-Bundle 'vim-ruby/vim-ruby'
+Plug 'vim-ruby/vim-ruby'
 "tpope/vim-endwise
-Plugin 'https://github.com/tpope/vim-endwise.git'
+Plug 'terryma/vim-expand-region'
+"Plug 'https://github.com/tpope/vim-endwise.git'
 "scrooloose/nerdcommenter快速注释插件
-Plugin 'https://github.com/scrooloose/nerdcommenter.git'
+Plug 'https://github.com/scrooloose/nerdcommenter.git'
 "tpope/vim-surround
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 "terryma/vim-multiple-cursors
-Plugin 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-multiple-cursors'
 "Syntax highlighting and indenting for JSX
-Bundle 'vim-scripts/matchit.zip'
-Bundle 'Valloric/MatchTagAlways'
-Bundle 'docunext/closetag.vim'
-Bundle 'bronson/vim-trailing-whitespace'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'ap/vim-css-color'
+Plug 'vim-scripts/matchit.zip'
+Plug 'Valloric/MatchTagAlways'
+Plug 'docunext/closetag.vim'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'flazz/vim-colorschemes'
+Plug 'easymotion/vim-easymotion'
+Plug 'ap/vim-css-color'
 "符号自动补全,  :help delimitMate for detailed information.
-Bundle 'Raimondi/delimitMate'
-Bundle 'mxw/vim-jsx'
-Plugin 'pangloss/vim-javascript'
-"#########################################################
-"#########################################################
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-"##############################################################
-
-"execute pathogen#infect()
+Plug 'Raimondi/delimitMate'
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
+Plug 'w0rp/ale'
+" Initialize plugin system
+" ===============================================================
+"PlugInstall [name ...] [#threads]	Install plugins
+"PlugUpdate [name ...] [#threads]	Install or update plugins
+"PlugClean[!]	Remove unused directories (bang version will clean without prompt)
+"PlugUpgrade	Upgrade vim-plug itself
+"PlugStatus	Check the status of plugins
+"PlugDiff	Examine changes from the previous update and the pending changes
+"PlugSnapshot[!] [output path]	Generate script for restoring the current snapshot of the plugins
+call plug#end()
 
 set suffixesadd+=.js
