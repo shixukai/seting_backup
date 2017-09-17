@@ -39,6 +39,8 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 
 #airline字体安装及设置
+brew tap caskroom/fonts
+brew cask install font-hack-nerd-font
 cd ~/.vim/bundle
 git clone https://github.com/powerline/fonts.git
 cd fonts

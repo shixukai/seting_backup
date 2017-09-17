@@ -44,8 +44,10 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 "*****************************************************
 "设定macvim默认字体
-set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12
+"set guifont=Droid\ Sans\ Mono\ for\ Powerline:h16
+set guifont=Knack\ Regular\ Nerd\ Font\ Complete:h16
 "设定菜单语言
+set encoding=utf-8
 set langmenu=zh_CN.UTF-8
 "*****************************************************
 
@@ -131,24 +133,24 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 "nerdTee窗口宽度
 let NERDTreeWinSize = 20
 " NERDTress File highlighting
-function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
-  exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
-  exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
-endfunction
+"function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+  "exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+  "exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+"endfunction
 
-call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
-call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
-call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
-call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
-call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
-call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
-call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
+"call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
+"call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
+"call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
+"call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
+"call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
+"call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
+"call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
+"call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
+"call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
+"call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
+"call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
+"call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
+"call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 "****************************************************************
 
 "设置Tagbar启动快捷键
@@ -196,8 +198,12 @@ set t_Co=256
 
 "****************************************************************
 " w0rp/ale
+" show status :ALEInfo
 let g:ale_lint_on_save = 0
-let g:ale_linters = {'jsx': ['stylelint', 'eslint']}
+let g:ale_linters = {
+      \'jsx': ['stylelint', 'eslint'],
+      \'scss': ['sasslint', 'scsslint']
+      \}
 let g:ale_linter_aliases = {'jsx': 'css'}
 
 "****************************************************************
@@ -206,7 +212,18 @@ map K <Plug>(expand_region_expand)
 map J <Plug>(expand_region_shrink)
 
 "##############################################################
-"以下是vundle配置
+"vim-nerdtree-syntax-highlight
+let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
+let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
+"Disable uncommon file extensions highlighting (this is a good idea if you are experiencing lag when scrolling)
+let g:NERDTreeLimitedSyntax = 1
+"##############################################################
+" vim-devicons
+let g:DevIconsEnableFoldersOpenClose = 1
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 "##############################################################
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -258,6 +275,9 @@ Plug 'Raimondi/delimitMate'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'w0rp/ale'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" plugin icon
+Plug 'ryanoasis/vim-devicons'
 " Initialize plugin system
 " ===============================================================
 "PlugInstall [name ...] [#threads]	Install plugins

@@ -7,6 +7,8 @@ rm -rf ~/.aprc
 ln -sf $Cur_dir/.aprc ~/.aprc
 rm -rf ~/.vimrc
 ln -sf $Cur_dir/.vimrc ~/.vimrc
+rm -rf ~/.config/nvim/init.vim
+ln -sf $Cur_dir/.vimrc ~/.config/nvim/init.vim
 rm -rf ~/.pryrc
 ln -sf $Cur_dir/.pryrc ~/.pryrc
 rm -rf ~/.vim/colors
