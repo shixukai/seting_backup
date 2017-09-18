@@ -66,9 +66,15 @@ set wildignore+=public/static/spm_modules/**
 set wildignore+=public/static/node_modules/**
 set wildignore+=node_modules/**
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-let g:ctrlp_use_caching = 0
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-set grepprg=ag\ --nogroup\ --nocolor
+"let g:ctrlp_show_hidden = 1
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+  " Use ag in CtrlP for listing files.
+  let g:ctrlp_user_command = 'ag --hidden --ignore .git %s -l --nocolor -g ""'
+  " Ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
 
 "vim-ruby execute
 "map <F5> :!ruby % <CR>
