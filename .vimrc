@@ -64,6 +64,7 @@ set wildignore+=vendor/rails/**
 set wildignore+=vendor/cache/**
 set wildignore+=public/static/spm_modules/**
 set wildignore+=public/static/node_modules/**
+set wildignore+=node_modules/**
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_use_caching = 0
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
@@ -208,22 +209,9 @@ let g:ale_linter_aliases = {'jsx': 'css'}
 
 "****************************************************************
 " vim-expand-region
-map K <Plug>(expand_region_expand)
-map J <Plug>(expand_region_shrink)
+"map K <Plug>(expand_region_expand)
+"map J <Plug>(expand_region_shrink)
 
-"##############################################################
-"vim-nerdtree-syntax-highlight
-let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
-let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
-let g:NERDTreeFileExtensionHighlightFullName = 1
-let g:NERDTreeExactMatchHighlightFullName = 1
-let g:NERDTreePatternMatchHighlightFullName = 1
-"Disable uncommon file extensions highlighting (this is a good idea if you are experiencing lag when scrolling)
-let g:NERDTreeLimitedSyntax = 1
-"##############################################################
-" vim-devicons
-let g:DevIconsEnableFoldersOpenClose = 1
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 "##############################################################
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -254,7 +242,7 @@ Plug 'tpope/vim-rails'
 
 Plug 'vim-ruby/vim-ruby'
 "tpope/vim-endwise
-Plug 'terryma/vim-expand-region'
+"Plug 'terryma/vim-expand-region'
 "Plug 'https://github.com/tpope/vim-endwise.git'
 "scrooloose/nerdcommenter快速注释插件
 Plug 'https://github.com/scrooloose/nerdcommenter.git'
@@ -288,5 +276,32 @@ Plug 'ryanoasis/vim-devicons'
 "PlugDiff	Examine changes from the previous update and the pending changes
 "PlugSnapshot[!] [output path]	Generate script for restoring the current snapshot of the plugins
 call plug#end()
+
+"##############################################################
+"vim-nerdtree-syntax-highlight
+let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
+let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
+"Disable uncommon file extensions highlighting (this is a good idea if you are experiencing lag when scrolling)
+let g:NERDTreeLimitedSyntax = 1
+"##############################################################
+" vim-devicons
+let g:webdevicons_enable = 1
+let g:webdevicons_enable_unite = 1
+let g:webdevicons_enable_nerdtree = 1
+let g:webdevicons_enable_vimfiler = 1
+let g:webdevicons_enable_airline_tabline = 1
+let g:webdevicons_enable_airline_statusline = 1
+let g:DevIconsEnableFoldersOpenClose = 1
+let g:webdevicons_enable_ctrlp = 1
+" whether or not to show the nerdtree brackets around flags 
+let g:webdevicons_conceal_nerdtree_brackets = 1
+"let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
+"let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+"##############################################################
 
 set suffixesadd+=.js
