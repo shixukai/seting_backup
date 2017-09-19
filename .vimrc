@@ -21,12 +21,13 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 set nu
-set mouse=a
 "设定搜索时不区分大小写
 set ignorecase
 "colorscheme darkblue
 colorscheme molokai
-
+set cursorline
+"hi CursorLine term=bold cterm=bold guibg=Grey40
+hi CursorLine gui=underline cterm=underline ctermfg=None
 
 "*****************************************************
 "css 自动补全设置
