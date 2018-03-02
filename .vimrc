@@ -97,6 +97,11 @@ map <leader><space> :FixWhitespace<cr>
 let g:closetag_html_style=1
 
 "****************************************************************
+let target_buffer = 1
+while target_buffer <= 99
+  execute "nnoremap " . target_buffer . "gb :" . target_buffer . "b\<CR>"
+  let target_buffer += 1
+endwhile
 
 "****************************************************************
 "easymotion 配置
