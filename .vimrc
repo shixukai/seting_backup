@@ -31,8 +31,8 @@ hi CursorLine gui=underline cterm=underline ctermfg=None
 
 "*****************************************************
 "css 自动补全设置
-:imap <tab> <c-x><c-o> 
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS 
+:imap <tab> <c-x><c-o>
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 "*****************************************************
 
@@ -159,7 +159,7 @@ let NERDTreeShowHidden=1
 "call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
 "call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
 "call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
-"call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
+"ghtcall NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
 "call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
 "call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
 "call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
@@ -185,6 +185,7 @@ let g:ctrlsf_default_root = 'project'
 let g:ctrlsf_regex_pattern = 1
 "defines where CtrlSf places its window. Possible values are left, right, top "and bottom. If nothing specified, the default value is left
 let g:ctrlsf_position = 'bottom'
+let g:ctrlsf_search_mode = 'async'
 "****************************************************************
 "vim-surround设置
 let g:surround_45 = "<%- \r %>"
@@ -309,7 +310,7 @@ let g:webdevicons_enable_airline_tabline = 1
 let g:webdevicons_enable_airline_statusline = 1
 let g:DevIconsEnableFoldersOpenClose = 1
 let g:webdevicons_enable_ctrlp = 1
-" whether or not to show the nerdtree brackets around flags 
+" whether or not to show the nerdtree brackets around flags
 let g:webdevicons_conceal_nerdtree_brackets = 1
 "let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
 "let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
