@@ -25,6 +25,7 @@ set nu
 set ignorecase
 "colorscheme darkblue
 colorscheme molokai
+"colorscheme falcon
 set cursorline
 "hi CursorLine term=bold cterm=bold guibg=Grey40
 hi CursorLine gui=underline cterm=underline ctermfg=None
@@ -60,12 +61,14 @@ imap kk <ESC>
 
 " CtrlP 插件配置选项
 let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlPMRU'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux"
 set wildignore+=vendor/rails/**
 set wildignore+=vendor/cache/**
 set wildignore+=public/static/spm_modules/**
 set wildignore+=public/static/node_modules/**
 set wildignore+=node_modules/**
+set wildignore+=test/**
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 "let g:ctrlp_show_hidden = 1
 if executable('ag')
@@ -77,8 +80,13 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-"vim-ruby execute
-"map <F5> :!ruby % <CR>
+"vim make
+"map <F5> :!make ll% <CR>
+map <F5> :!make all <CR>
+
+:map j gj
+:map k gk
+
 :let mapleader = ","
 
 nmap <silent> <leader>ee :e $MYVIMRC<CR>
@@ -191,6 +199,20 @@ let g:ctrlsf_search_mode = 'async'
 let g:surround_45 = "<%- \r %>"
 let g:surround_61 = "<%= \r %>"
 
+"****************************************************************
+" vim-cpp-enhanced-highlight
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_experimental_simple_template_highlight = 1
+let g:cpp_concepts_highlight = 1
+let g:cpp_no_function_highlight = 1
+
+"****************************************************************
+" YouCompleteMe
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_show_diagnostics_ui = 1
+
 
 "****************************************************************
 " airline设置
@@ -217,7 +239,7 @@ set t_Co=256
 let g:ale_lint_on_save = 0
 let g:ale_linters = {
       \'jsx': ['stylelint', 'eslint'],
-      \'scss': ['sasslint', 'scsslint']
+      \'scss': ['sasslint', 'scsslint'],
       \}
 let g:ale_linter_aliases = {'jsx': 'css'}
 
@@ -238,11 +260,13 @@ call plug#begin('~/.vim/plugged')
 "bling/vim-airline
 Plug 'bling/vim-airline'
 
+"Plug 'octol/vim-cpp-enhanced-highlight'
+
 Plug 'dyng/ctrlsf.vim'
 "Plug 'scrooloose/syntastic'
 Plug 'rking/ag.vim'
 "majutsushi/tagbar
-Plug 'https://github.com/majutsushi/tagbar.git'
+Plug 'majutsushi/tagbar'
 
 Plug 'Yggdroot/indentLine'
 "CtrlP
@@ -253,6 +277,9 @@ Plug 'https://github.com/kien/ctrlp.vim.git'
 Plug 'https://github.com/scrooloose/nerdtree.git'
 "tpope/vim-rails
 Plug 'tpope/vim-rails'
+
+Plug 'Valloric/YouCompleteMe'
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 
 Plug 'vim-ruby/vim-ruby'
 "tpope/vim-endwise
@@ -280,6 +307,10 @@ Plug 'w0rp/ale'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " plugin icon
 Plug 'ryanoasis/vim-devicons'
+
+" colorscheme
+Plug 'fenetikm/falcon'
+
 " Initialize plugin system
 " ===============================================================
 "PlugInstall [name ...] [#threads]	Install plugins
