@@ -26,18 +26,18 @@ set ignorecase
 "colorscheme darkblue
 colorscheme molokai
 "colorscheme falcon
-set cursorline
+"set cursorline
 "hi CursorLine term=bold cterm=bold guibg=Grey40
 hi CursorLine gui=underline cterm=underline ctermfg=None
+
+" 自动换行时不自动添加注释, see :help fo-table
+set formatoptions-=ro
 
 "*****************************************************
 "css 自动补全设置
 :imap <tab> <c-x><c-o>
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-
 "*****************************************************
-
-
 
 "set cursorline
 "hi CursorLine term=bold cterm=bold guibg=Grey40
@@ -61,15 +61,29 @@ imap kk <ESC>
 
 " CtrlP 插件配置选项
 let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlPMRU'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux"
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_max_files = 0
+let g:ctrlp_max_depth= 40
+let g:ctrlp_match_current_file = 1
+let g:ctrlp_by_filename=1
+let g:ctrlp_regexp = 1
+let g:ctrlp_follow_symlinks=1
+let g:ctrlp_working_path_mode='ra'
+" set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux"
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*
 set wildignore+=vendor/rails/**
 set wildignore+=vendor/cache/**
 set wildignore+=public/static/spm_modules/**
 set wildignore+=public/static/node_modules/**
 set wildignore+=node_modules/**
 set wildignore+=test/**
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+set wildignore+=build/**
+"let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+"
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
+    \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
+    \ }
 "let g:ctrlp_show_hidden = 1
 if executable('ag')
   " Use Ag over Grep
@@ -77,7 +91,7 @@ if executable('ag')
   " Use ag in CtrlP for listing files.
   let g:ctrlp_user_command = 'ag --hidden --ignore .git %s -l --nocolor -g ""'
   " Ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
+  let g:ctrlp_use_caching = 1
 endif
 
 "vim make
@@ -159,6 +173,7 @@ let NERDTreeWinSize = 20
   "exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
 "endfunction
 let NERDTreeShowHidden=1
+let NERDTreeNodeDelimiter = "\t"
 
 "call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
 "call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
@@ -210,9 +225,20 @@ let g:cpp_no_function_highlight = 1
 
 "****************************************************************
 " YouCompleteMe
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_show_diagnostics_ui = 1
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_server_log_level = 'info'
+let g:ycm_min_num_identifier_candidate_chars = 1
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
+let g:ycm_complete_in_strings = 1
+let g:ycm_key_invoke_completion = '<c-z>'
+let g:ycm_add_preview_to_completeopt = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 0
+let g:ycm_auto_trigger = 1
+let g:ycm_min_num_of_chars_for_completion = 0
+set completeopt=menu,menuone
 
+noremap <c-z> <NOP>
 
 "****************************************************************
 " airline设置
@@ -232,16 +258,38 @@ nnoremap [b :bp<CR>
 nnoremap ]b :bn<CR>
 "让airline显示颜色
 set t_Co=256
+let g:airline_highlighting_cache=1
 
 "****************************************************************
 " w0rp/ale
 " show status :ALEInfo
-let g:ale_lint_on_save = 0
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_enter = 0
+let g:ale_set_highlights = 1
 let g:ale_linters = {
       \'jsx': ['stylelint', 'eslint'],
       \'scss': ['sasslint', 'scsslint'],
+      \'cpp': ['clangtidy'],
       \}
+      "\'cpp': ['gcc', 'clang', 'cppcheck'],
+      ""\'cpp': ['clangcheck', 'clangtidy', 'cppcheck'],
+let g:ale_c_build_dir_names = ['build', 'release']
 let g:ale_linter_aliases = {'jsx': 'css'}
+let g:airline#extensions#ale#enabled = 1
+let g:ale_c_gcc_options = '-Wall -O2 -std=c99'
+let g:ale_cpp_gcc_options = '-Wall -O2 -std=c++11'
+let g:ale_cpp_gcc_options = '-Wall -O2 -std=c++17'
+"let g:ale_c_cppcheck_options = ''
+"let g:ale_cpp_cppcheck_options = ''
+
+set concealcursor=inv
+let g:clang_snippets = 1
+set completeopt=menu,longest
+let g:clang_complete_optional_args_in_snippets = 1
+let g:clang_trailing_placeholder = 1
+let g:ale_c_parse_makefile = 1
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_on_insert_leave = 1
 
 "****************************************************************
 " vim-expand-region
@@ -269,6 +317,7 @@ Plug 'rking/ag.vim'
 Plug 'majutsushi/tagbar'
 
 Plug 'Yggdroot/indentLine'
+
 "CtrlP
 Plug 'https://github.com/kien/ctrlp.vim.git'
 "vim-snippets
@@ -276,12 +325,13 @@ Plug 'https://github.com/kien/ctrlp.vim.git'
 "NERD Tree
 Plug 'https://github.com/scrooloose/nerdtree.git'
 "tpope/vim-rails
-Plug 'tpope/vim-rails'
+"Plug 'tpope/vim-rails'
 
 Plug 'Valloric/YouCompleteMe'
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 
-Plug 'vim-ruby/vim-ruby'
+
+"Plug 'vim-ruby/vim-ruby'
 "tpope/vim-endwise
 "Plug 'terryma/vim-expand-region'
 "Plug 'https://github.com/tpope/vim-endwise.git'
