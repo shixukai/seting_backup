@@ -33,6 +33,9 @@ hi CursorLine gui=underline cterm=underline ctermfg=None
 " 自动换行时不自动添加注释, see :help fo-table
 set formatoptions-=ro
 
+" replace-paste yanked text in vim without yanking the deleted lines
+vnoremap p "_dP
+
 "*****************************************************
 "css 自动补全设置
 :imap <tab> <c-x><c-o>
@@ -53,46 +56,48 @@ set encoding=utf-8
 set langmenu=zh_CN.UTF-8
 "*****************************************************
 
-let g:rehash256 = 1
-"启用html格式化插件,见:help xml-plugin
-filetype plugin on
+"let g:rehash256 = 1
+""启用html格式化插件,见:help xml-plugin
+"filetype plugin on
 
-imap kk <ESC>
+"imap kk <ESC>
 
-" CtrlP 插件配置选项
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_max_files = 0
-let g:ctrlp_max_depth= 40
-let g:ctrlp_match_current_file = 1
-let g:ctrlp_by_filename=1
-let g:ctrlp_regexp = 1
-let g:ctrlp_follow_symlinks=1
-let g:ctrlp_working_path_mode='ra'
-" set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux"
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*
-set wildignore+=vendor/rails/**
-set wildignore+=vendor/cache/**
-set wildignore+=public/static/spm_modules/**
-set wildignore+=public/static/node_modules/**
-set wildignore+=node_modules/**
-set wildignore+=test/**
-set wildignore+=build/**
-"let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-"
-let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
-    \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
-    \ }
-"let g:ctrlp_show_hidden = 1
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-  " Use ag in CtrlP for listing files.
-  let g:ctrlp_user_command = 'ag --hidden --ignore .git %s -l --nocolor -g ""'
-  " Ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 1
-endif
+"" CtrlP 插件配置选项
+"let g:ctrlp_map = '<c-p>'
+"let g:ctrlp_cmd = 'CtrlP'
+"let g:ctrlp_max_files = 0
+"let g:ctrlp_max_depth= 40
+"let g:ctrlp_match_current_file = 1
+"let g:ctrlp_by_filename=1
+"let g:ctrlp_regexp = 1
+"let g:ctrlp_follow_symlinks=1
+"let g:ctrlp_working_path_mode='ra'
+"" set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux"
+"set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*
+"set wildignore+=vendor/rails/**
+"set wildignore+=vendor/cache/**
+"set wildignore+=public/static/spm_modules/**
+"set wildignore+=public/static/node_modules/**
+"set wildignore+=node_modules/**
+"set wildignore+=test/**
+"set wildignore+=build/**
+""let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+""
+"let g:ctrlp_custom_ignore = {
+    "\ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
+    "\ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
+    "\ }
+""let g:ctrlp_show_hidden = 1
+"if executable('ag')
+  "" Use Ag over Grep
+  "set grepprg=ag\ --nogroup\ --nocolor
+  "" Use ag in CtrlP for listing files.
+  "let g:ctrlp_user_command = 'ag --hidden --ignore .git %s -l --nocolor -g ""'
+  "" Ag is fast enough that CtrlP doesn't need to cache
+  "let g:ctrlp_use_caching = 1
+"endif
+
+"*****************************************************
 
 "vim make
 "map <F5> :!make ll% <CR>
@@ -152,8 +157,8 @@ function! CopyFileName()
   echo expand("%:p")
 endfunction
 
-map <Leader>fs :call CopyFileName()<CR>
-map <Leader>fl :call CopyProjectFileName()<CR>
+map <Leader>cfs :call CopyFileName()<CR>
+map <Leader>cfl :call CopyProjectFileName()<CR>
 
 "****************************************************************
 "autocmd vimenter * NERDTree
@@ -225,7 +230,7 @@ let g:cpp_no_function_highlight = 1
 
 "****************************************************************
 " YouCompleteMe
-let g:ycm_show_diagnostics_ui = 0
+let g:ycm_show_diagnostics_ui = 1
 let g:ycm_server_log_level = 'info'
 let g:ycm_min_num_identifier_candidate_chars = 1
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
@@ -296,6 +301,52 @@ let g:ale_lint_on_insert_leave = 1
 "map K <Plug>(expand_region_expand)
 "map J <Plug>(expand_region_shrink)
 
+"****************************************************************
+let g:rainbow_active = 1
+
+let g:rainbow_load_separately = [
+    \ [ '*' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
+    \ [ '*.tex' , [['(', ')'], ['\[', '\]']] ],
+    \ [ '*.cpp' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
+    \ [ '*.{html,htm}' , [['(', ')'], ['\[', '\]'], ['{', '}'], ['<\a[^>]*>', '</[^>]*>']] ],
+    \ ]
+
+let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
+let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
+
+"****************************************************************
+" don't show the help in normal mode
+let g:Lf_HideHelp = 1
+let g:Lf_UseCache = 0
+let g:Lf_UseVersionControlTool = 0
+let g:Lf_IgnoreCurrentBufferName = 1
+" popup mode
+let g:Lf_WindowPosition = 'popup'
+let g:Lf_PreviewInPopup = 1
+let g:Lf_StlSeparator = { 'left': "\ue0b0", 'right': "\ue0b2", 'font': "DejaVu Sans Mono for Powerline" }
+let g:Lf_PreviewResult = {'Function': 0, 'BufTag': 0 }
+
+let g:Lf_ShortcutF = "<leader>ff"
+noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
+noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
+noremap <leader>ft :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
+noremap <leader>fl :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>
+
+""noremap <C-B> :<C-U><C-R>=printf("Leaderf! rg --current-buffer -e %s ", expand("<cword>"))<CR>
+""noremap <C-F> :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR>
+"" search visually selected text literally
+"xnoremap gf :<C-U><C-R>=printf("Leaderf! rg -F -e %s ", leaderf#Rg#visual())<CR>
+"noremap go :<C-U>Leaderf! rg --recall<CR>
+
+"" should use `Leaderf gtags --update` first
+"let g:Lf_GtagsAutoGenerate = 0
+"let g:Lf_Gtagslabel = 'native-pygments'
+"noremap <leader>fr :<C-U><C-R>=printf("Leaderf! gtags -r %s --auto-jump", expand("<cword>"))<CR><CR>
+"noremap <leader>fd :<C-U><C-R>=printf("Leaderf! gtags -d %s --auto-jump", expand("<cword>"))<CR><CR>
+"noremap <leader>fo :<C-U><C-R>=printf("Leaderf! gtags --recall %s", "")<CR><CR>
+"noremap <leader>fn :<C-U><C-R>=printf("Leaderf gtags --next %s", "")<CR><CR>
+"noremap <leader>fp :<C-U><C-R>=printf("Leaderf gtags --previous %s", "")<CR><CR>
+
 "##############################################################
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -319,7 +370,7 @@ Plug 'majutsushi/tagbar'
 Plug 'Yggdroot/indentLine'
 
 "CtrlP
-Plug 'https://github.com/kien/ctrlp.vim.git'
+"Plug 'https://github.com/kien/ctrlp.vim.git'
 "vim-snippets
 
 "NERD Tree
@@ -360,6 +411,10 @@ Plug 'ryanoasis/vim-devicons'
 
 " colorscheme
 Plug 'fenetikm/falcon'
+
+Plug 'frazrepo/vim-rainbow'
+
+Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 
 " Initialize plugin system
 " ===============================================================
